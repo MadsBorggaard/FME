@@ -1,7 +1,7 @@
 # Startup Python Script:
 Opretter en txt-fil med et uuid
 
-# Shutdown Python Script:
+# Shutdown Python Script - statestik til sql:
 ***Der skal være installeret pyodbc i python for at dette virker***\
 Skriver forskelligt statestik omkring kørslen af workflowet, bl.a. om det har kørt ok eller ej.\
 Der bliver skrevet følgende information i databasen:
