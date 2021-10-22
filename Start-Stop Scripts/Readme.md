@@ -28,8 +28,12 @@ Der skal oplyses følgende i scriptet:
 - modtager email
 - gmail brugernavn (det samme som afsender email)
 - gmail password (app password hvis man har 2trins login)
+# Startup Pyton Script - csv-fil
+Opretter en csv-fil til statestik
 # Shutdown Python Script - statestik til csv
 Gemmer statestik til csv-fil samme sted som FME workspacet er gemt, det er samme oplysninger som gemmes hvis man bruger *Shutdown Python Script - statestik til sql*
+**SKAL BRUGE Startup Python Script - csv-fil**
 # Ekstra
-Man kan selvfølgelig tilføje mere til mailen, f.eks. hvor lang tid den kørte m.m.
+Man kan selvfølgelig tilføje mere til mailen, f.eks. hvor lang tid den kørte m.m.\
+og man kan selvfølgelig sætte dem sammen, så den både gemmer i sql og sender en mail
 
