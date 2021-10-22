@@ -17,3 +17,5 @@ featuresRead: En Python-dictionary, indekseret efter featuretype, som indeholder
 featuresWritten: En Python-dictionary, indekseret efter featuretype, som indeholder antallet af skrevne features for denne featuretype. (virker ikke med FeatureReader transformer)<br>
 totalFeaturesRead: Det samlede antal læste features. (virker ikke med FeatureReader transformer)<br>
 totalFeaturesWritten: Det samlede antal skrevne features. (virker ikke med FeatureReader transformer)<br>
+<h1>FME_Statestik.sql</h1>
+Dette er en sql fil der opretter tabellen der henvises til i Shutdown Python  Script
