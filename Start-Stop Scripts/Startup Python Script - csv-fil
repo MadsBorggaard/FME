@@ -1,0 +1,17 @@
+import os
+import pathlib
+import fme
+import csv
+
+filePath = pathlib.Path(fme.logFileName).parent.resolve()
+logFile = fme.logFileName
+workspacename = logFile.split('\\')[-1][:-4]
+csvFile = os.path.join(filePath, workspacename + 'Statistics.csv')
+
+header = ['dato', 'id', 'name', 'status', 'elapsedRunTime', 'cpuSysTime', 'cpuUserTime', 'cpuTime', 'failureMessage', 'featuresRead', 'featuresWritten', 'totalFeaturesRead', 'totalFeaturesWritten']
+
+if not os.path.isfile(csvFile):
+    print('Creating Statistics file')
+    with open(csvFile, 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(header)
