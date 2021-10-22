@@ -3,6 +3,12 @@ import fme
 import pathlib
 import datetime
 
+# variabler der skal tilpasses
+serverNavn = 'LAPTOP-A4RRJ6BE\SQLEXPRESS'
+databaseNavn = 'test_database'
+schemaNavn = 'dbo'
+tabelNavn = 'FME_Statestik'
+
 logFile = fme.logFileName
 path = pathlib.Path(fme.getAbsolutePath(logFile)).parent.resolve()
 workspaceName = logFile.split('\\')[-1][:-4]
@@ -19,28 +25,27 @@ elapsedRunTime = fme.elapsedRunTime
 cpuSysTime = fme.cpuSysTime
 cpuUserTime = fme.cpuUserTime
 cpuTime = fme.cpuTime
-failureMessage = fme.failureMessage
+failureMessage = str(fme.failureMessage).replace("'", '"')
+if 'Terminator: Termination Message:' in failureMessage:
+    
+    failureMessage = failureMessage.replace('Terminator: Termination Message: ', '').replace('"', '')
+    status = 'Termination'
 featuresRead = str(fme.featuresRead).replace("'", '"')
 featuresWritten = str(fme.featuresWritten).replace("'", '"')
 totalFeaturesRead = fme.totalFeaturesRead
 totalFeaturesWritten = fme.totalFeaturesWritten
 now = datetime.datetime.now()
 dt_string = now.strftime("%y/%m/%d %H:%M:%S")
-
-sql = f'''INSERT INTO [dbo].[FME_Statestik] (dato, id, name, status, elapsedRunTime, cpuSysTime, cpuUserTime, cpuTime, failureMessage, featuresRead, featuresWritten, totalFeaturesRead, totalFeaturesWritten)
+sql = f'''INSERT INTO [{schemaNavn}].[{tabelNavn}] (dato, id, name, status, elapsedRunTime, cpuSysTime, cpuUserTime, cpuTime, failureMessage, featuresRead, featuresWritten, totalFeaturesRead, totalFeaturesWritten)
                 VALUES ('{now}', '{local_uuid[0]}', '{workspaceName}', '{status}', {elapsedRunTime}, {cpuSysTime}, {cpuUserTime}, {cpuTime}, '{failureMessage}', '{featuresRead}', '{featuresWritten}', {totalFeaturesRead}, {totalFeaturesWritten})
                 '''
+connectionString = (f'''Driver={{SQL Server}};Server={serverNavn};Database={databaseNavn};Trusted_Connection=yes;''')      
 
-#print(sql)        
-
-conn = pyodbc.connect('Driver={SQL Server};'
-                      'Server=LAPTOP-A4RRJ6BE\SQLEXPRESS;'
-                      'Database=Mads;'
-                      'Trusted_Connection=yes;')
+print(f'sql - {sql}')
+print(f'conncetionString - {connectionString}')
+conn = pyodbc.connect(connectionString)
 
 cursor = conn.cursor()
 
 cursor.execute(sql)
 conn.commit()
-
-print(fme.numFeaturesLogged)
