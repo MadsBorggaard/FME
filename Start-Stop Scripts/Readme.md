@@ -31,7 +31,7 @@ Der skal oplyses følgende i scriptet:
 # Startup Pyton Script - csv-fil
 Opretter en csv-fil til statestik
 # Shutdown Python Script - statestik til csv
-Gemmer statestik til csv-fil samme sted som FME workspacet er gemt, det er samme oplysninger som gemmes hvis man bruger *Shutdown Python Script - statestik til sql*
+Gemmer statestik til csv-fil samme sted som FME workspacet er gemt, det er samme oplysninger som gemmes hvis man bruger *Shutdown Python Script - statestik til sql*\
 **SKAL BRUGE Startup Python Script - csv-fil**
 # Ekstra
 Man kan selvfølgelig tilføje mere til mailen, f.eks. hvor lang tid den kørte m.m.\
