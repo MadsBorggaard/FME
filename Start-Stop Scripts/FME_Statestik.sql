@@ -2,7 +2,7 @@ CREATE TABLE [dbo].[FME_Statestik](
 	[dato] [datetime2](7) NOT NULL,
 	[id] [nchar](36) NULL,
 	[name] [nvarchar](max) NULL,
-	[status] [nvarchar](10) NULL,
+	[status] [nvarchar](20) NULL,
 	[elapsedRunTime] [float] NULL,
 	[cpuSysTime] [float] NULL,
 	[cpuUserTime] [float] NULL,
