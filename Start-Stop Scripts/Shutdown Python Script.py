@@ -4,10 +4,10 @@ import pathlib
 import datetime
 
 # variabler der skal tilpasses
-serverNavn = 'LAPTOP-A4RRJ6BE\SQLEXPRESS'
-databaseNavn = 'test_database'
-schemaNavn = 'dbo'
-tabelNavn = 'FME_Statestik'
+serverNavn = 'NAVNET PÅ SQL SERVEREN'
+databaseNavn = 'DATABASENAVN'
+schemaNavn = 'SCHEMANAVN'
+tabelNavn = 'TABELNAVN'
 
 logFile = fme.logFileName
 path = pathlib.Path(fme.getAbsolutePath(logFile)).parent.resolve()
@@ -40,9 +40,6 @@ sql = f'''INSERT INTO [{schemaNavn}].[{tabelNavn}] (dato, id, name, status, elap
                 VALUES ('{now}', '{local_uuid[0]}', '{workspaceName}', '{status}', {elapsedRunTime}, {cpuSysTime}, {cpuUserTime}, {cpuTime}, '{failureMessage}', '{featuresRead}', '{featuresWritten}', {totalFeaturesRead}, {totalFeaturesWritten})
                 '''
 connectionString = (f'''Driver={{SQL Server}};Server={serverNavn};Database={databaseNavn};Trusted_Connection=yes;''')      
-
-print(f'sql - {sql}')
-print(f'conncetionString - {connectionString}')
 conn = pyodbc.connect(connectionString)
 
 cursor = conn.cursor()
