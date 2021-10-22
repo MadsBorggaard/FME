@@ -18,4 +18,5 @@ featuresWritten: En Python-dictionary, indekseret efter featuretype, som indehol
 totalFeaturesRead: Det samlede antal læste features. (virker ikke med FeatureReader transformer)<br>
 totalFeaturesWritten: Det samlede antal skrevne features. (virker ikke med FeatureReader transformer)<br>
 <h1>FME_Statestik.sql</h1>
-Dette er en sql fil der opretter tabellen der henvises til i Shutdown Python  Script
+Dette er en sql fil der opretter tabellen der henvises til i Shutdown Python Script<br>
+Navnet på tabellen kan selvfølgelig ændres, så skal det også bare gøres i Shutdown Python Script
