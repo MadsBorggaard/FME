@@ -21,6 +21,13 @@ Der bliver skrevet følgende information i databasen:
 # FME_Statestik.sql
 Dette er en sql fil der opretter tabellen der henvises til i Shutdown Python Script\
 Navnet på tabellen kan selvfølgelig ændres, så skal det også bare gøres i Shutdown Python Script
-# ToDo
-- [ ] Lave så Shutdown Python Script også sender en mail når der er fejl
+# Shutdown Python Script - send log mail from gmail:
+***Der skal oprettes et app password hvis man har aktiveret 2trins login til gmail***\
+Der skal oplyses følgende i scriptet:
+- afsender email
+- modtager email
+- gmail brugernavn (det samme som afsender email)
+- gmail password (app password hvis man har 2trins login)
+# Ekstra
+Man kan selvfølgelig tilføje mere til mailen, f.eks. hvor lang tid den kørte m.m.
 
