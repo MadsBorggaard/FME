@@ -16,9 +16,7 @@ Schemaet til Matriklen er lavet i hånden, så det skal tilpasses hvis der komme
 
 # BBR Kommune Udtræk.zip
 
-Henter BBR data fra Datafordeleren og indlæser dem i database\
-**HUSK AT SÆTTE KOMMUNEKODE PÅ FIL-DOWNLOAD FRA DATAFORDELEREN NÅR DEN OPRETTES.**\
-Det tager ca. 25-30 minutter at hente BBR data for Lemvig Kommune.\
+Se folderen
 
 # Start-Stop Scripts
 Indeholder forskellige Start-Stop Python Scripts til FME
